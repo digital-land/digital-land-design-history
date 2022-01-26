@@ -1,0 +1,20 @@
+// this sass file has been created to override some govuk styles
+// as technically we should not be using Transport or the Crown logo
+// if not on actually on a GOV.UK
+
+.app-header__logo {
+  .govuk-header__logotype {
+    display: none;
+  }
+  .govuk-header__product-name {
+    font-size: 1em;
+    font-weight: bold;
+  }
+}
+
+.govuk-footer__copyright-logo {
+  background: none;
+  width: auto;
+  height: auto;
+  padding: 0;
+}
