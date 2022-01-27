@@ -49,7 +49,7 @@
     "netlify-cms": "^2.10.185",
     "rimraf": "^3.0.2",
     "rollup": "^2.61.1",
-    "sass": "^1.45.2"
+    "sass": "^1.49.0"
   },
   "devDependencies": {
     "browser-sync": "^2.27.7",
