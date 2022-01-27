@@ -30,6 +30,12 @@ module.exports = function (eleventyConfig) {
 
   // Collections
 
+  // Creates a 'collection' of guidance content but only those that are not set to be hidden
+   eleventyConfig.addCollection('posts', collection => {
+    return [...collection.getFilteredByGlob('./app/posts/*.md').filter(function(item) {
+    })].reverse();
+  });
+
   // Passthrough
   eleventyConfig.addPassthroughCopy({ './app/images': '.' })
   eleventyConfig.addPassthroughCopy({ 'node_modules/govuk-frontend/govuk/assets': 'assets' })

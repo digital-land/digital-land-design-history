@@ -17,10 +17,12 @@
   "repository": "github:DFE-Digital/govuk-design-history",
   "bugs": "https://github.com/DFE-Digital/govuk-design-history/issues",
   "scripts": {
-    "prebuild": "rimraf public",
+    "copy:netlify-cms": "cpx 'node_modules/netlify-cms/dist/*.*' public/javascripts/netlify-cms/ --clean --verbose",
+    "clean": "rimraf public",
+    "prebuild": "npm run clean && npm run copy:netlify-cms",
     "build": "eleventy",
     "prestart": "npm run build",
-    "start": "eleventy --serve --quiet",
+    "start": "eleventy --serve --quiet & npx netlify-cms-proxy-server",
     "test": "standard"
   },
   "dependencies": {
@@ -30,6 +32,7 @@
     "@rollup/plugin-commonjs": "^21.0.0",
     "@rollup/plugin-node-resolve": "^13.1.1",
     "accessible-autocomplete": "^2.0.3",
+    "cpx": "^1.5.0",
     "govuk-frontend": "^4.0.0",
     "http-server": "^14.0.0",
     "luxon": "^2.2.0",
@@ -43,12 +46,15 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "markdown-it-table-of-contents": "^0.6.0",
+    "netlify-cms": "^2.10.185",
     "rimraf": "^3.0.2",
     "rollup": "^2.61.1",
     "sass": "^1.45.2"
   },
   "devDependencies": {
+    "browser-sync": "^2.27.7",
     "standard": "^16.0.4",
+    "wait-on": "^6.0.0",
     "webshot-node": "^0.18.2"
   },
   "standard": {
