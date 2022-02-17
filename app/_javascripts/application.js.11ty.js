@@ -5,7 +5,7 @@ const commonjs = require('@rollup/plugin-commonjs')
 module.exports = class {
   data () {
     return {
-      permalink: '/javascripts/application.js',
+      permalink: '/assets/javascripts/application.js',
       eleventyExcludeFromCollections: true
     }
   }

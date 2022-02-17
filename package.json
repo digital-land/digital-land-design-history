@@ -13,7 +13,7 @@
   "repository": "github:DFE-Digital/govuk-design-history",
   "bugs": "https://github.com/DFE-Digital/govuk-design-history/issues",
   "scripts": {
-    "copy:netlify-cms": "cpx 'node_modules/netlify-cms/dist/*.*' public/javascripts/netlify-cms/ --clean --verbose",
+    "copy:netlify-cms": "cpx 'node_modules/netlify-cms/dist/*.*' public/assets/javascripts/netlify-cms/ --clean --verbose",
     "clean": "rimraf public",
     "prebuild": "npm run clean && npm run copy:netlify-cms",
     "build": "NODE_ENV=production eleventy",

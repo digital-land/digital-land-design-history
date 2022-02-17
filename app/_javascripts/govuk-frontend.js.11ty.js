@@ -3,7 +3,7 @@ const rollup = require('rollup')
 module.exports = class {
   data () {
     return {
-      permalink: '/javascripts/govuk-frontend.js',
+      permalink: '/assets/javascripts/govuk-frontend.js',
       eleventyExcludeFromCollections: true
     }
   }
