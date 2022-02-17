@@ -3,7 +3,7 @@ const sass = require('sass')
 module.exports = class {
   data () {
     return {
-      permalink: '/stylesheets/application.css',
+      permalink: '/assets/stylesheets/application.css',
       eleventyExcludeFromCollections: true
     }
   }

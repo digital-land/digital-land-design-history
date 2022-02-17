@@ -3,43 +3,42 @@ layout: false
 permalink: admin/config.yml
 eleventyExcludeFromCollections: true
 ---
+{% set siteDisplayURL = "http://localhost:8080" if app.isENVDev else "https://digital-land-design.netlify.app" %}
 # where are the files hosted
 backend:
   name: github
   branch: main
   repo: digital-land/digital-land-design-history
 # a URL to your published site. May be used by the CMS for various functionality
-site_url: https://digital-land-design.netlify.app
-display_url: http://localhost:8080
+site_url: {{ siteDisplayURL }}
+display_url: {{ siteDisplayURL }}
 # where are we placing any images
-media_folder: app/images
+media_folder: app/images/uploads
 # what path will images be served from
-public_folder: /public/images/
+public_folder: /assets/images/uploads
+# disable search to save compute and bandwidth
+search: false
 # set this to true when working locally and run: npx netlify-cms-proxy-server
-local_backend: true
+local_backend: {{ "true" if app.isENVDev else "false" }}
 # tells the CMS to show a bespoke logo (helps users know they are in the right place)
-logo_url: /images/logo.svg
+logo_url: /assets/images/logo.svg
 # A list of collections the CMS should be able to edit
 collections:
   # Used in routes, ie.: /admin/collections/:slug/edit
   - name: 'posts'
-    label: 'Posts'             # Used in the CMS UI
-    label_singular: 'Post'     # Used in the UI, ie: "New Post"
-    folder: 'app/posts'            # where generated markdown content files should live
-    create: true               # Allow users to create new documents in this collection
-    slug: '{{slug}}'
-    preview_path: "{{slug}}"
-    fields:                    # The fields each document in this collection have
+    label: 'Posts' # Used in the CMS UI
+    label_singular: 'Post' # Used in the UI, ie: "New Post"
+    folder: 'app/posts' # where generated markdown content files should live
+    create: true # Allow users to create new documents in this collection
+    slug: {% raw %}"{{slug}}"{% endraw %}
+    preview_path: {% raw %}"{{slug}}"{% endraw %}
+    fields: # The fields each document in this collection have
       - {
-          label: 'Title',       # The field label shown to user in the CMS UI
-          name: 'title',        # the field name generated and added to the frontmatter
-          widget: 'string',       # the datatype of this field (called a widget in NetlifyCMS)
+          label: 'Title', # The field label shown to user in the CMS UI
+          name: 'title', # the field name generated and added to the frontmatter
+          widget: 'string', # the datatype of this field (called a widget in NetlifyCMS)
         }
-      - {
-          label: "Description",
-          name: "description",
-          widget: "text"
-        }
+      - { label: 'Description', name: 'description', widget: 'text' }
       - {
           label: 'Date',
           name: 'date',
@@ -50,6 +49,5 @@ collections:
           label: 'Body',
           name: 'body',
           widget: 'markdown',
-          hint: 'Body content for this post'
+          hint: 'Body content for this post',
         }
-

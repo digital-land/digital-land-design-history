@@ -6,11 +6,7 @@
     "node": "^16.0.0"
   },
   "description": "A place for documenting GOV.UK service designs",
-  "keywords": [
-    "design-history",
-    "government",
-    "govuk"
-  ],
+  "keywords": ["design-history", "government", "govuk"],
   "author": "Becoming a teacher team",
   "license": "MIT",
   "homepage": "https://design-history.herokuapp.com",
@@ -20,9 +16,9 @@
     "copy:netlify-cms": "cpx 'node_modules/netlify-cms/dist/*.*' public/javascripts/netlify-cms/ --clean --verbose",
     "clean": "rimraf public",
     "prebuild": "npm run clean && npm run copy:netlify-cms",
-    "build": "eleventy",
+    "build": "NODE_ENV=production eleventy",
     "prestart": "npm run build",
-    "start": "eleventy --serve --quiet & npx netlify-cms-proxy-server",
+    "start": "NODE_ENV=dev eleventy --serve --quiet & npx netlify-cms-proxy-server",
     "test": "standard"
   },
   "dependencies": {
@@ -58,8 +54,6 @@
     "webshot-node": "^0.18.2"
   },
   "standard": {
-    "ignore": [
-      "!.eleventy.js"
-    ]
+    "ignore": ["!.eleventy.js"]
   }
 }
