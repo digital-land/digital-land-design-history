@@ -42,7 +42,7 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "markdown-it-table-of-contents": "^0.6.0",
-    "netlify-cms": "^2.10.185",
+    "netlify-cms": "^2.10.190",
     "rimraf": "^3.0.2",
     "rollup": "^2.66.1",
     "sass": "^1.49.0"
