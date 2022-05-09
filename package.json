@@ -44,7 +44,7 @@
     "markdown-it-table-of-contents": "^0.6.0",
     "netlify-cms": "^2.10.185",
     "rimraf": "^3.0.2",
-    "rollup": "^2.66.1",
+    "rollup": "^2.72.1",
     "sass": "^1.49.0"
   },
   "devDependencies": {
