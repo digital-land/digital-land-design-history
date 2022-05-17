@@ -48,7 +48,7 @@
     "sass": "^1.49.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.27.7",
+    "browser-sync": "^2.27.10",
     "standard": "^16.0.4",
     "wait-on": "^6.0.0",
     "webshot-node": "^0.18.2"
